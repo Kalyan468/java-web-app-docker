@@ -10,15 +10,15 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build -t kalyan468/docker/java-web-app:latest .'
+        sh 'docker build -t kalyan468/docker/java-web-app .'
     }
     
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
           sh "docker login -u kalyan468 -p ${Docker_Hub_Pwd}"
         }
-         docker tag java-web-app:latest kalyan468/docker:latest
-        sh 'docker push kalyan468/docker/java-web-app:latest'
+      
+        sh 'docker push kalyan468/docker/java-web-app'
      }
      
     stage('Run Docker Image In Dev Server'){
