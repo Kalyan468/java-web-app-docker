@@ -5,7 +5,7 @@ node{
     }
     
     stage(" Maven Clean Package"){
-      sh "clean package"
+      sh " mvn clean package"
     } 
     
     
