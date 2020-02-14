@@ -17,7 +17,7 @@ node{
         withCredentials([string(credentialsId: 'Docker_Hub_Pwd', variable: 'Docker_Hub_Pwd')]) {
           sh "docker login -u kalyan468 -p ${Docker_Hub_Pwd}"
         }
-        sh 'docker push kalyan468/docker/java-web-app'
+        sh 'docker push kalyan468/docker/java-web-app:v1'
      }
      
       stage('Run Docker Image In Dev Server'){
