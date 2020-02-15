@@ -10,7 +10,7 @@ node{
     
     
     stage('Build Docker Image'){
-        sh 'docker build -t kalyan468/docker/java-web-app:1.0 .'
+        sh 'docker build -t kalyan468/docker/java-web-app .'
     }
     
     stage('Push Docker Image'){
@@ -18,7 +18,7 @@ node{
           sh "docker login -u kalyan468 -p ${Docker_Hub_Pwd}"
         }
       
-        sh 'docker push kalyan468/docker/java-web-app:1.0'
+        sh 'docker push kalyan468/docker/java-web-app'
      }
      
     stage('Run Docker Image In Dev Server'){
